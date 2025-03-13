@@ -1,0 +1,156 @@
+.title-h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.projects {
+    padding: 20px;
+    max-width: 80vw;
+    margin: 0 auto;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3vh;
+}
+
+.project-item {
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(26, 29, 32, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 8px rgba(26, 29, 32, 0.8);
+}
+
+.api-weather-link-description, .github-link-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 20px 'Montserrat Alternates', sans-serif;
+    text-decoration: none !important;
+    font-weight: bold;
+    color: #1a1d20;
+}
+
+.api-weather-img-container, .github-link-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.api-weather-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+}
+
+.github-link-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
+
+.stack-container, .stack-container-github {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.stack-container-github {
+    flex-direction: column;
+}
+
+.stack-img {
+    width: 35px;
+    height: 35px;
+}
+
+.stack-container-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stack-description {
+    font: 16px 'Montserrat Alternates', sans-serif;
+    color: #1a1d20;
+    text-decoration: none;
+}
+
+.api-weather-link:hover, .api-weather-link:link, .api-weather-link:visited,
+.github-link:hover, .github-link:link, .github-link:visited, .github-link,
+.github-link-description:hover, .github-link-description:link, .github-link-description:visited {
+    text-decoration: none !important;
+    color: #1a1d20;
+}
+
+.api-weather-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.github-link-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.api-weather-button, .github-link-button {
+    display: inline-block;
+    align-content: center;
+    padding: 10px 20px;
+    margin-top: 10px;
+    width: 200px;
+    font-size: 1rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.api-weather-button:hover, .github-link-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.api-weather-button:active, .github-link-button:active {
+    background-color: #003f7f;
+    transform: scale(0.95);
+}
+
+.data-created-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: small;
+}
+
+.description-github-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+

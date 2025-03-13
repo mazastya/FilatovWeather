@@ -1,0 +1,10 @@
+.main-index {
+    text-align: center;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #F2F4F6;
+}

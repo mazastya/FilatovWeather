@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>
+        @{
+            ViewData["Title"] = "Projects";
+        }
+    </title>
+
+    <link rel="stylesheet" href="~/css/Projects.css"/>
+</head>
+
+<body>
+
+<h1 class="title-h1">Projects Page</h1>
+<div class="stack-container">
+    <p class="stack-description">Stack:</p>
+    <img class="stack-img" src="~/images/stack/C_Sharp_logo.svg" alt="C# logo"/>
+    <img class="stack-img" src="~/images/stack/Dot_Net_logo.svg" alt=".Net logo">
+    <img class="stack-img" src="~/images/stack/HTML_logo.svg" alt="HTML5 logo">
+    <img class="stack-img" src="~/images/stack/CSS3_logo.svg" alt="CSS3 logo">
+</div>
+<main>
+    <div class="projects">
+
+        <ul class="project-grid">
+
+            <!-- Weather API -->
+            <li class="project-item">
+                <a class="api-weather-link" asp-controller="Projects" asp-action="ApiWeather">
+                    <p class="api-weather-link-description">Weather API</p>
+                    <div class="api-weather-img-container">
+                        <img class="api-weather-img" src="~/images/projects/api_weather/weather-api.svg" alt="Weather API"/>
+                    </div>
+                    <div class="api-weather-button-container">
+                        <a class="api-weather-button" asp-controller="Projects" asp-action="ApiWeather">Go to API
+                            Weather</a>
+                    </div>
+                    <div class="data-created-container">
+                        <p class="data-created">Development time: 05.02.2025 - 09.02.2025 </p>
+                    </div>
+                </a>
+            </li>
+
+            <!--GitHub Link -->
+            <li class="project-item">
+                <a class="github-link" href="https://github.com/mazastya">
+                    <p class="github-link-description">GitHub: mazastya</p>
+                    <div class="github-link-img-container">
+                        <img class="github-link-img" src="~/images/Github_logo.svg" alt="Github logo"/>
+                    </div>
+                    <div class="description-github-container">
+                        <p class="description-github">You can see my other works in other programming languages on
+                            GitHub </p>
+                    </div>
+                    <div class="stack-container-github">
+                        <div class="stack-description-container">
+                            @* <p class="stack-description">Stack on GitHub projects: </p> *@
+                        </div>
+                        <div class="stack-container-logos">
+                            <img class="stack-img" src="~/images/stack/C_Sharp_logo.svg" alt="C# logo"/>
+                            <img class="stack-img" src="~/images/stack/C++_logo.svg" alt="C++ logo">
+                            <img class="stack-img" src="~/images/stack/Dot_Net_logo.svg" alt=".Net logo">
+                            <img class="stack-img" src="~/images/stack/Python_logo.svg" alt="Python logo">
+                            <img class="stack-img" src="~/images/stack/Java_logo.svg" alt="Java logo">
+                            <img class="stack-img" src="~/images/stack/Docker_logo.svg" alt="Docker logo">
+                            <img class="stack-img" src="~/images/stack/HTML_logo.svg" alt="HTML5 logo">
+                            <img class="stack-img" src="~/images/stack/CSS3_logo.svg" alt="CSS3 logo">
+                        </div>
+                    </div>
+                    <div class="github-link-button-container">
+                        <a class="github-link-button" href="https://github.com/mazastya">Go to GitHub</a>
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</main>
+
+<footer>
+
+</footer>
+
+</body>
+</html>

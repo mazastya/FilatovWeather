@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        @{ ViewData["Title"] = "Api Weather"; }
+    </title>
+    <link rel="stylesheet" href="~/css/projects/ApiWeather.css">
+</head>
+
+<body>
+<header></header>
+
+<main class="main-container">
+    @* <h1 class="welcome-header-1">Welcome to API Weather Page</h1> *@
+    <a class="weather-api-header" asp-controller="Projects" asp-action="ApiWeather"><h1>Welcome to API Weather Page</h1>
+    </a>
+    <div class="weather-form-container">
+        <form class="weather-form" asp-controller="ApiWeather" asp-action="GetWeather" method="get">
+            <label for="city" class="enter-city">Enter city:</label>
+            <input type="text" name="city" id="city" placeholder="Ex: Saint-Petersburg" required>
+
+            <label for="airQuality">Include Air Quality:</label>
+            <select id="airQuality" name="airQuality" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <button type="submit">Get Weather</button>
+        </form>
+
+        @if (Model != null)
+        {
+            <section class="model-view-container">
+                <h2 class="weather-info">Weather information:</h2>
+                <img class="weather-icon" src="@Model.Current.Condition.Icon" alt="Weather Condition"/>
+                <div class="model-view-current">
+                    <p class="current-temp-info">
+                        @* <strong class="current-temp-info-bold">Temperature: </strong> *@
+                        @Model.Current.TempC °C
+                    </p>
+                    <p class="current-feels-like-c-info"><strong>Feels like: </strong> @Model.Current.FeelsLikeC °C</p>
+                    <p class=""></p>
+                    <p class="current-condition-text-info"><strong>Condition: </strong> @Model.Current.Condition.Text
+                    </p>
+                </div>
+                <div class="model-view-location">
+                    <p class="location-name-info">
+                        <strong>Location: </strong> @Model.Location.Name, @Model.Location.Country</p>
+                    <p class="location-localtime-info"><strong>Local Time: </strong> @Model.Location.LocalTime</p>
+                </div>
+                @if (Model.Current.AirQuality != null)
+                {
+                    <div class="air-quality-container">
+                        <details>
+                            <summary>Show air quality</summary>
+                            <ul class="air-quality-list">
+                                <li><strong>Carbon Monoxide</strong> @Model.Current.AirQuality.Co μg/m3</li>
+                                <li><strong>Ozone</strong> @Model.Current.AirQuality.O3 μg/m3</li>
+                                <li><strong>Nitrogen dioxide</strong> @Model.Current.AirQuality.No2 μg/m3</li>
+                                <li><strong>Sulphur dioxide</strong> @Model.Current.AirQuality.So2 μg/m3</li>
+                                <li><strong>US - EPA standard</strong> @Model.Current.AirQuality.UsEpaIndex</li>
+                            </ul>
+                        </details>
+                    </div>
+                }
+            </section>
+            <div class="weather-link">
+                <a class="api-weather-link" href="https://www.weatherapi.com/" target="_blank">Go to Weather API</a>
+            </div>
+        }
+    </div>
+</main>
+
+<footer></footer>
+</body>
+
+</html>
