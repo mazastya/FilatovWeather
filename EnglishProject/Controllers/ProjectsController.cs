@@ -9,4 +9,9 @@ public class ProjectsController(ILogger<ProjectsController> logger) : Controller
         logger.LogInformation("ApiWeather");
         return View();
     }
+
+    public IActionResult WeatherGame()
+    {
+        logger.LogInformation("WeatherGame");
+        return View();    }
 }

@@ -34,6 +34,9 @@ app.MapControllerRoute(
         pattern: "{controller=ApiWeather}/{action=GetWeather}")
     .WithStaticAssets();
 
-
+app.MapControllerRoute(
+        name: "projects",
+        pattern: "{controller=WeatherGame}/{action=WeatherGame}")
+    .WithStaticAssets();
 
 app.Run();

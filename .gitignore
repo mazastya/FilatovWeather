@@ -1,5 +1,31 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+# Rider ignored files
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.EnglishProject.iml
+/modules.xml
+
+# Editor-based HTTP Client requests
+/httpRequests/
+
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# Build directories
 bin/
 obj/
-/packages/
+packages/
+
+# Rider module file
 riderModule.iml
+
+# ReSharper caches
 /_ReSharper.Caches/
+
+# Configuration files (environment-specific)
+appsettings.json
+appsettings.*.json

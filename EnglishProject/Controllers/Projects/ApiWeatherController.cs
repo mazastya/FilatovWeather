@@ -3,10 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EnglishProject.Controllers.Projects;
 
-public class ApiWeatherController(ILogger<ApiWeatherController> logger) : Controller
+public class ApiWeatherController(ILogger<ApiWeatherController> logger, ApiWeatherService apiWeatherService)
+    : Controller
 {
-    private readonly ApiWeatherService _apiWeatherService = new ApiWeatherService(new HttpClient());
-
     [HttpGet]
     public async Task<IActionResult> GetWeather(string city, string airQuality)
     {
@@ -21,17 +20,15 @@ public class ApiWeatherController(ILogger<ApiWeatherController> logger) : Contro
 
         try
         {
-            var weather = await _apiWeatherService.GetWeatherAsync(city, includeAirQuality);
-            logger.LogInformation("GetWeather success");
+            var weather = await apiWeatherService.GetWeatherAsync(city, includeAirQuality);
+            logger.LogInformation("GetWeather success for city: {City}", city);
             return View("~/Views/Projects/ApiWeather.cshtml", weather);
         }
         catch (Exception ex)
         {
-            logger.LogInformation(ex.ToString());
+            logger.LogError(ex, "Failed to retrieve weather data for city: {City}", city);
             ViewBag.ErrorMessage = "Failed to retrieve weather data. Please try again.";
             return View("Error");
         }
     }
-
-
 }
