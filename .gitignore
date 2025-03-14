@@ -27,5 +27,5 @@ riderModule.iml
 /_ReSharper.Caches/
 
 # Configuration files (environment-specific)
-appsettings.json
+#appsettings.json
 appsettings.*.json
